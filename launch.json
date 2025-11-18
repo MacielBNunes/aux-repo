@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "DebuggerTest",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "${file}"
+            ],
+            // "justMyCode": false,
+        }
+    ]
+}
