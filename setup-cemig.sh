@@ -59,5 +59,8 @@ docker exec -u code "$CONTAINER" bash -c "grep -qxF 'source /usr/share/bash-comp
 echo "🐍 Adicionando alias 'py=python3'..."
 docker exec -u code "$CONTAINER" bash -c "grep -qxF \"alias py='python3'\" ~/.bashrc || echo \"alias py='python3'\" >> ~/.bashrc"
 
+# --- 5. Instalar o commando tree ---
+docker exec -u root "$CONTAINER" bash -c "apt-get update && apt-get install -y tree"
+
 echo "🎉 Ambiente configurado com sucesso!"
 echo "💡 Dica: reabra o terminal do DevContainer para carregar o .bashrc."
