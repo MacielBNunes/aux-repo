@@ -1,0 +1,11 @@
+[Unit]
+Description=Add all SSH keys to ssh-agent
+After=ssh-agent.service
+Requires=ssh-agent.service
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/ssh-add-all.sh
+
+[Install]
+WantedBy=default.target

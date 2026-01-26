@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "RuffFormatPyFile",
+			"type": "shell",
+			"command": "scripts/format.sh",
+			"args": ["${relativeFile}"]
+		},
+		{
+			"label": "RuffFormatPyStagedFiles",
+			"type": "shell",
+			"command": "scripts/format.sh",
+		}
+	]
+}

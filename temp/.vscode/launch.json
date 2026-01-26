@@ -1,0 +1,19 @@
+{
+	"configurations": [
+		{
+			"name": "TestDebug",
+			"type": "debugpy",
+			"request": "launch",
+			"module": "pytest",
+			"args": [
+				"${file}"
+			],
+		},
+		{
+			"name": "FileDebug",
+			"type": "debugpy",
+			"request": "launch",
+			"program": "${file}",
+		},
+	]
+}

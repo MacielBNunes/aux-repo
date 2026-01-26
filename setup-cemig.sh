@@ -59,8 +59,22 @@ docker exec -u code "$CONTAINER" bash -c "grep -qxF 'source /usr/share/bash-comp
 echo "🐍 Adicionando alias 'py=python3'..."
 docker exec -u code "$CONTAINER" bash -c "grep -qxF \"alias py='python3'\" ~/.bashrc || echo \"alias py='python3'\" >> ~/.bashrc"
 
-# --- 5. Instalar o commando tree ---
+# --- 5. Executar o agente ssh e adicionar as chaves ---
+echo "????"
+
+docker exec -u code "$CONTAINER" bash -c 'grep -qxF "eval \$(ssh-agent -s) >/dev/null 2>&1 && ssh-add ~/.ssh/github ~/.ssh/bitbucket >/dev/null" ~/.bashrc || echo "eval \$(ssh-agent -s) >/dev/null 2>&1 && ssh-add ~/.ssh/github ~/.ssh/bitbucket >/dev/null 2>&1" >> ~/.bashrc'
+
+# --- 6. Instalar o commando tree ---
 docker exec -u root "$CONTAINER" bash -c "apt-get update && apt-get install -y tree"
+
+# --- 7. Habilitar o globstart (**) ---
+docker exec -u code "$CONTAINER" bash -c 'grep -qxF "shopt -s globstar" ~/.bashrc || echo "shopt -s globstar" >> ~/.bashrc'
+
+# --- 8. Configurar usuário e email no git ---
+docker exec -u code "$CONTAINER" bash -c 'git config --global user.email "mnn@certi.org.br"'
+docker exec -u code "$CONTAINER" bash -c 'git config --global user.name "Maciel B. Nunes"'
+
+
 
 echo "🎉 Ambiente configurado com sucesso!"
 echo "💡 Dica: reabra o terminal do DevContainer para carregar o .bashrc."

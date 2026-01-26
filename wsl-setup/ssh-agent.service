@@ -1,0 +1,6 @@
+[Unit]
+Description=SSH Agent
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ssh-agent -D -a %t/ssh-agent.socket
