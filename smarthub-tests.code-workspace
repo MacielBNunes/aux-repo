@@ -1,0 +1,11 @@
+{
+    "folders": [
+        {
+            "name": "SmarthubTests",
+            "path": "/home/mnn/ms-spreadsheets-simulations/03-simulations/03-typhoon/02-smarthub-tests"
+        }
+    ],
+    "settings": {
+        "git.openRepositoryInParentFolders": "always"
+    }
+}
