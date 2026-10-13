@@ -1,0 +1,7 @@
+Host github.com
+    IdentityFile /mnt/c/Users/mnn/.ssh/github
+    IdentitiesOnly yes
+
+Host bitbucket.org
+    IdentityFile /mnt/c/Users/mnn/.ssh/bitbucket
+    IdentitiesOnly yes
